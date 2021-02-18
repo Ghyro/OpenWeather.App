@@ -3,7 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1340
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Base", "Core.Base\Core.Base.csproj", "{E5FD0089-2E05-449A-A295-D4109DF96EB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Infrastructure", "Core.Infrastructure\Core.Infrastructure.csproj", "{C37D8D2A-529B-4A11-A485-37DE9DAC6C7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Host", "Services.Host\Services.Host.csproj", "{B09D4734-A367-4724-ACDE-718865AB39DD}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5FD0089-2E05-449A-A295-D4109DF96EB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5FD0089-2E05-449A-A295-D4109DF96EB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5FD0089-2E05-449A-A295-D4109DF96EB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5FD0089-2E05-449A-A295-D4109DF96EB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C37D8D2A-529B-4A11-A485-37DE9DAC6C7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C37D8D2A-529B-4A11-A485-37DE9DAC6C7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C37D8D2A-529B-4A11-A485-37DE9DAC6C7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C37D8D2A-529B-4A11-A485-37DE9DAC6C7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B09D4734-A367-4724-ACDE-718865AB39DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B09D4734-A367-4724-ACDE-718865AB39DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B09D4734-A367-4724-ACDE-718865AB39DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B09D4734-A367-4724-ACDE-718865AB39DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
