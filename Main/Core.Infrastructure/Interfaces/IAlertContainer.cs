@@ -2,8 +2,6 @@
 
 namespace Core
 {
-    using Core.Infrastructure;
-
     public interface IAlertContainer
     {
         List<Alert> Alerts { get; set; }

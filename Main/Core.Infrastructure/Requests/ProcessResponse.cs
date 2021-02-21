@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Core
 {
-    public sealed class ProcessResponse
+    public sealed class ProcessResponse : AppResponse
     {
+        public List<AppResponse> Responses { get; set; }
     }
 }

@@ -42,6 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alert.cs" />
+    <Compile Include="Configurations\ApplicationInfo.cs" />
+    <Compile Include="Configurations\Configuration.cs" />
+    <Compile Include="Configurations\InstanceInfo.cs" />
+    <Compile Include="Configurations\Instances.cs" />
     <Compile Include="Extensions\AppExtensions.cs" />
     <Compile Include="Interfaces\IAlertContainer.cs" />
     <Compile Include="Interfaces\IHasId.cs" />
@@ -50,8 +54,11 @@
     <Compile Include="Requests\AppResponse.cs" />
     <Compile Include="Requests\ProcessRequest.cs" />
     <Compile Include="Requests\ProcessResponse.cs" />
-    <Compile Include="Requests\RequestResult.cs" />
+    <Compile Include="Requests\ResponseResult.cs" />
     <Compile Include="SeverityType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

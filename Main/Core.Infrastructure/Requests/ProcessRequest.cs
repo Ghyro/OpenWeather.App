@@ -3,8 +3,8 @@
 
 namespace Core
 {
-    public sealed class ProcessRequest
+    public sealed class ProcessRequest : AppRequest
     {
-        public List<AppRequest> Requests { get; set; }
+        
     }
 }

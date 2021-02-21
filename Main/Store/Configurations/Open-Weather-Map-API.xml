@@ -1,0 +1,11 @@
+<ApplicationInfo>
+	<Instances>
+		<InstanceInfo>
+			<ID>OpenWeatherMap</ID>
+			<Configuration>
+				<Key>5d8970e907f7fdc8f4ce2415abf86289</Key>
+			</Configuration>
+			<Uri>https://openweathermap.org/api</Uri>
+		</InstanceInfo>
+	</Instances>
+</ApplicationInfo>

@@ -3,17 +3,17 @@
 
 namespace Core
 {
-    using Core.Infrastructure;
-
     public abstract class AppResponse : IHasId, IAlertContainer
     {
         public string Id { get; set; }
 
         public string RequestId { get; set; }
-
-        public string ActionId { get; set; }
        
         public List<Alert> Alerts { get; set; }
+
+        public List<AppRequest> Requests { get; set; }
+
+        public ResponseResult ResponseResult { get; set; }
 
         public void AddAlerts(IEnumerable<Alert> alerts)
         {
