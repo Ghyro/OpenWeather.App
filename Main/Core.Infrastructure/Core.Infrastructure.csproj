@@ -46,6 +46,9 @@
     <Compile Include="Configurations\Configuration.cs" />
     <Compile Include="Configurations\InstanceInfo.cs" />
     <Compile Include="Configurations\Instances.cs" />
+    <Compile Include="Connector\ConnectorRequest.cs" />
+    <Compile Include="Connector\ConnectorResponse.cs" />
+    <Compile Include="Connector\IConnectorService.cs" />
     <Compile Include="Extensions\AppExtensions.cs" />
     <Compile Include="Interfaces\IAlertContainer.cs" />
     <Compile Include="Interfaces\IHasId.cs" />

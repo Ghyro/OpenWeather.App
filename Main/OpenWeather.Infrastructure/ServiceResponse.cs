@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace OpenWeather.Infrastructure
 {
+    using Core;
+
     public class ServiceResponse
     {
         public ServiceResponse(ConnectorResponse connectorResponse)

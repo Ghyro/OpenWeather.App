@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
 
 namespace OpenWeather.Connector
 {
-    using OpenWeather.Infrastructure;
+    using Core;
 
     public class OpenWeatherConnectorService : IConnectorService
     {
@@ -42,9 +43,8 @@ namespace OpenWeather.Connector
 
         private HttpRequestMessage PrepareHttpRequest(ConnectorRequest connectorRequest)
         {
-            var request = new HttpRequestMessage();
-
-            // TODO: fill out this object
+            var request = new HttpRequestMessage(connectorRequest.HttpMethod, connectorRequest.Uri);
+            ApplyHttpRequestHeaders(request, connectorRequest.Headers);
 
             return request;
         }
@@ -56,6 +56,12 @@ namespace OpenWeather.Connector
                 : null;
             
             return new ConnectorResponse(responseMessage, content);
+        }
+
+        private void ApplyHttpRequestHeaders(HttpRequestMessage request, IDictionary<string, string> headers)
+        {
+            foreach (var header in headers)
+                request.Headers.Add(header.Key, header.Value);
         }
     }
 }

@@ -44,7 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IConnectorService.cs" />
+    <Compile Include="BaseConnectorRequestBuilder.cs" />
     <Compile Include="JsonParser.cs" />
     <Compile Include="OpenWeatherConnectorService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

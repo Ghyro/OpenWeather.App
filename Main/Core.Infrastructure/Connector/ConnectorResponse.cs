@@ -4,7 +4,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 
-namespace OpenWeather.Infrastructure
+namespace Core
 {
     public class ConnectorResponse
     {
@@ -18,7 +18,7 @@ namespace OpenWeather.Infrastructure
 
         public bool IsSuccess { get; }
 
-        public string Content { get;  }
+        public string Content { get; }
 
         public HttpStatusCode StatusCode { get; }
 

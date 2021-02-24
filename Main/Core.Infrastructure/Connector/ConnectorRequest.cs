@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Net.Http;
 
-namespace OpenWeather.Infrastructure
+namespace Core
 {
     public sealed class ConnectorRequest
     {

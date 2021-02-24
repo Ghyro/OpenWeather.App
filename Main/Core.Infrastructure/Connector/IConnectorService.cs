@@ -1,10 +1,8 @@
 ﻿using System.Threading.Tasks;
 
 
-namespace OpenWeather.Connector
+namespace Core
 {
-    using OpenWeather.Infrastructure;
-
     public interface IConnectorService
     {
         Task<ConnectorResponse> ExecuteAsync(ConnectorRequest request);
