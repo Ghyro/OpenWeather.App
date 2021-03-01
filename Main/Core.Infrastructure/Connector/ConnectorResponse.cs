@@ -4,9 +4,10 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 
+
 namespace Core
 {
-    public class ConnectorResponse
+    public abstract class ConnectorResponse
     {
         public ConnectorResponse(HttpResponseMessage responseMessage, string content)
         {

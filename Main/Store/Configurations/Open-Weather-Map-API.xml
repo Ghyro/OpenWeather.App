@@ -5,7 +5,7 @@
 			<Configuration>
 				<Key>5d8970e907f7fdc8f4ce2415abf86289</Key>
 			</Configuration>
-			<Uri>https://openweathermap.org/api</Uri>
+			<Uri>https://openweathermap.org/api.openweathermap.org/data/2.5</Uri>
 		</InstanceInfo>
 	</Instances>
 </ApplicationInfo>

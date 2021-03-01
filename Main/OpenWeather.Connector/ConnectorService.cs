@@ -8,20 +8,21 @@ namespace OpenWeather.Connector
 {
     using Core;
 
-    public class OpenWeatherConnectorService : IConnectorService
+    public class ConnectorService : IConnectorService
     {
-        private readonly HttpClient _httpClient;
+        private readonly HttpClient HttpClient;
 
-        public OpenWeatherConnectorService()
+        public ConnectorService()
         {
-            _httpClient = new HttpClient();
+            if (HttpClient == null)
+                HttpClient = new HttpClient();
         }
 
         public async Task<ConnectorResponse> ExecuteAsync(ConnectorRequest request)
         {
             var httpRequest = PrepareHttpRequest(request);
 
-            var httpResponse = await DoExecuteAsync(_httpClient, httpRequest).ConfigureAwait(false);
+            var httpResponse = await DoExecuteAsync(HttpClient, httpRequest).ConfigureAwait(false);
 
             return await PrepareConnectorResponseAsync(httpResponse).ConfigureAwait(false);
         }
@@ -55,7 +56,7 @@ namespace OpenWeather.Connector
                 ? await responseMessage.Content.ReadAsStringAsync()
                 : null;
             
-            return new ConnectorResponse(responseMessage, content);
+            return new OpenWeatherConnectorResponse(responseMessage, content);
         }
 
         private void ApplyHttpRequestHeaders(HttpRequestMessage request, IDictionary<string, string> headers)

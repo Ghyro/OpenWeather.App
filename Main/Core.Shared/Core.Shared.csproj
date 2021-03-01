@@ -4,14 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E5FD0089-2E05-449A-A295-D4109DF96EB5}</ProjectGuid>
+    <ProjectGuid>{D491FECC-771C-480F-96B3-D7E66E9E33D6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Core.Base</RootNamespace>
-    <AssemblyName>Core.Base</AssemblyName>
+    <RootNamespace>Core.Shared</RootNamespace>
+    <AssemblyName>Core.Shared</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,9 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,17 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HandlerBuilder.cs" />
+    <Compile Include="OpenWeatherRequestHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RequestsProcessor.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core.Infrastructure\Core.Infrastructure.csproj">
       <Project>{c37d8d2a-529b-4a11-a485-37de9dac6c7c}</Project>
       <Name>Core.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Core.Shared\Core.Shared.csproj">
-      <Project>{d491fecc-771c-480f-96b3-d7e66e9e33d6}</Project>
-      <Name>Core.Shared</Name>
+    <ProjectReference Include="..\OpenWeather.Connector\OpenWeather.Connector.csproj">
+      <Project>{692fa768-3a80-405c-a314-02db87d34adc}</Project>
+      <Name>OpenWeather.Connector</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

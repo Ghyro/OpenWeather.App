@@ -1,6 +1,6 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace Services.Host.Controllers
 {
@@ -10,10 +10,31 @@ namespace Services.Host.Controllers
     [ApiController]
     public class RequestsController : ControllerBase
     {
-        [HttpPost]
-        public Task<ActionResult<ProcessResponse>> Process(ProcessRequest request)
+        private readonly RequestsProcessor Processor;
+
+        public RequestsController()
         {
-            throw new NotImplementedException();
+            if (Processor == null)
+                Processor = new RequestsProcessor();
+        }
+
+        [HttpGet]
+        public ActionResult<string> Get()
+        {
+            return "Test Requests Controller";
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<ProcessResponse>> Process(ProcessRequest request)
+        {
+            if (request == null)
+                return BadRequest();
+
+            ProcessResponse processResponse = null;
+
+            await Processor.ProcessAsync(request, processResponse);
+
+            return Ok(processResponse);
         }
     }
 }
