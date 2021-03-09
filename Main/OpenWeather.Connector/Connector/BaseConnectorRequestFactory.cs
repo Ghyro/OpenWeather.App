@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 
 
-namespace OpenWeather.Connector
+namespace OpenWeather
 {
     using Core;
-    using OpenWeather.Infrastructure.Connector;
 
     public abstract class BaseConnectorRequestFactory : IRequestBuilder
     {

@@ -4,7 +4,7 @@ using System.Net.Http;
 using DTO = OpenWeather.API.DTO;
 
 
-namespace OpenWeather.Infrastructure.Connector
+namespace OpenWeather
 {
     public class ConnectorResponse
     {

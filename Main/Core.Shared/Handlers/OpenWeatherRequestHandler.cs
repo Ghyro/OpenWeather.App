@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Core
 {
-    using OpenWeather.Connector;    
+    using OpenWeather;
 
     public class OpenWeatherRequestHandler : IBaseRequestHandler
     {

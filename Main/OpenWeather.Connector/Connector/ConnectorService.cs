@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 using DTO = OpenWeather.API.DTO;
 
 
-namespace OpenWeather.Connector
+namespace OpenWeather
 {
-    using OpenWeather.Infrastructure.Connector;
-
     public class ConnectorService : IConnectorService
     {
         private readonly HttpClient _httpClient;

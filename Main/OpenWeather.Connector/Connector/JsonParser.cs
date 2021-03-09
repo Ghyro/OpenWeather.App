@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using Newtonsoft.Json;
 
 
-namespace OpenWeather.Connector
+namespace OpenWeather
 {
     using Core;
 

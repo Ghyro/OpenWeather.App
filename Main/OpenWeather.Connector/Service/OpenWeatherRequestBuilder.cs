@@ -1,8 +1,7 @@
 using System.Net.Http;
-using OpenWeather.Infrastructure.Connector;
 
 
-namespace OpenWeather.Connector
+namespace OpenWeather
 {
     using Core;
 

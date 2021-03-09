@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 
 
-namespace OpenWeather.Infrastructure.Connector
+namespace OpenWeather
 {
     public class ConnectorRequest : BaseApiRequest
     {

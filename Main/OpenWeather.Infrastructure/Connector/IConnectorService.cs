@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 
 
-namespace OpenWeather.Infrastructure.Connector
+namespace OpenWeather
 {
     public interface IConnectorService
     {
