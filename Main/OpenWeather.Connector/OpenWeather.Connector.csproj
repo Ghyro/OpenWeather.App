@@ -47,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseConnectorRequestFactory.cs" />
-    <Compile Include="JsonParser.cs" />
-    <Compile Include="ConnectorService.cs" />
-    <Compile Include="OpenWeatherRequestBuilder.cs" />
-    <Compile Include="OpenWeatherRequestService.cs" />
+    <Compile Include="Connector\BaseConnectorRequestFactory.cs" />
+    <Compile Include="Connector\JsonParser.cs" />
+    <Compile Include="Connector\ConnectorService.cs" />
+    <Compile Include="Service\OpenWeatherRequestBuilder.cs" />
+    <Compile Include="Service\OpenWeatherRequestService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,5 +67,6 @@
       <Name>OpenWeather.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

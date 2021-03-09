@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31019.35
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1401
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Base", "Core.Base\Core.Base.csproj", "{E5FD0089-2E05-449A-A295-D4109DF96EB5}"
 EndProject
@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.Host", "Services.H
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWeather.Connector", "OpenWeather.Connector\OpenWeather.Connector.csproj", "{692FA768-3A80-405C-A314-02DB87D34ADC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Adapters", "Adapters", "{D6D003A4-FCA0-470D-A841-831FCB059F3F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{D6D003A4-FCA0-470D-A841-831FCB059F3F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWeather.Infrastructure", "OpenWeather.Infrastructure\OpenWeather.Infrastructure.csproj", "{25C68A8B-9B55-4D4C-B46B-4B6B2C168AD1}"
 EndProject

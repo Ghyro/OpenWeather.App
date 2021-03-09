@@ -42,8 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HandlerBuilder.cs" />
-    <Compile Include="OpenWeatherRequestHandler.cs" />
+    <Compile Include="Handlers\HandlerBuilder.cs" />
+    <Compile Include="Handlers\OpenWeatherRequestHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -56,5 +56,6 @@
       <Name>OpenWeather.Connector</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
