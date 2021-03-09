@@ -1,7 +1,7 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 
 
-namespace Core
+namespace OpenWeather.Infrastructure.Connector
 {
     public interface IConnectorService
     {

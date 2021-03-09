@@ -34,6 +34,9 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="OpenWeather.API.DTO">
+      <HintPath>..\Utilities\OpenWeather.API.DTO\OpenWeather.API.DTO\bin\Release\OpenWeather.API.DTO.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,7 +49,6 @@
   <ItemGroup>
     <Compile Include="BaseConnectorRequestFactory.cs" />
     <Compile Include="JsonParser.cs" />
-    <Compile Include="OpenWeatherConnectorResponse.cs" />
     <Compile Include="ConnectorService.cs" />
     <Compile Include="OpenWeatherRequestBuilder.cs" />
     <Compile Include="OpenWeatherRequestService.cs" />

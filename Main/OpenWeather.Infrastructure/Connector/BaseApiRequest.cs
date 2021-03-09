@@ -1,4 +1,4 @@
-﻿namespace Core
+namespace OpenWeather.Infrastructure.Connector
 {
     public abstract class BaseApiRequest
     {

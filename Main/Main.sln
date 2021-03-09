@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1340
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Base", "Core.Base\Core.Base.csproj", "{E5FD0089-2E05-449A-A295-D4109DF96EB5}"
 EndProject
@@ -14,6 +14,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Adapters", "Adapters", "{D6D003A4-FCA0-470D-A841-831FCB059F3F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWeather.Infrastructure", "OpenWeather.Infrastructure\OpenWeather.Infrastructure.csproj", "{25C68A8B-9B55-4D4C-B46B-4B6B2C168AD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Shared", "Core.Shared\Core.Shared.csproj", "{D491FECC-771C-480F-96B3-D7E66E9E33D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenWeather", "OpenWeather", "{A09E6AC7-3535-4652-8B28-691D39F496FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,13 +45,18 @@ Global
 		{25C68A8B-9B55-4D4C-B46B-4B6B2C168AD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25C68A8B-9B55-4D4C-B46B-4B6B2C168AD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25C68A8B-9B55-4D4C-B46B-4B6B2C168AD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D491FECC-771C-480F-96B3-D7E66E9E33D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D491FECC-771C-480F-96B3-D7E66E9E33D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D491FECC-771C-480F-96B3-D7E66E9E33D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D491FECC-771C-480F-96B3-D7E66E9E33D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{692FA768-3A80-405C-A314-02DB87D34ADC} = {D6D003A4-FCA0-470D-A841-831FCB059F3F}
-		{25C68A8B-9B55-4D4C-B46B-4B6B2C168AD1} = {D6D003A4-FCA0-470D-A841-831FCB059F3F}
+		{692FA768-3A80-405C-A314-02DB87D34ADC} = {A09E6AC7-3535-4652-8B28-691D39F496FF}
+		{25C68A8B-9B55-4D4C-B46B-4B6B2C168AD1} = {A09E6AC7-3535-4652-8B28-691D39F496FF}
+		{A09E6AC7-3535-4652-8B28-691D39F496FF} = {D6D003A4-FCA0-470D-A841-831FCB059F3F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {951617CD-49E3-4F3E-8E11-0A0108BA6286}

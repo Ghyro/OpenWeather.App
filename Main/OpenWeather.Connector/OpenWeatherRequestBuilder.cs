@@ -1,5 +1,5 @@
-﻿using System.Net.Http;
-using System.Collections.Specialized;
+using System.Net.Http;
+using OpenWeather.Infrastructure.Connector;
 
 
 namespace OpenWeather.Connector
@@ -15,21 +15,12 @@ namespace OpenWeather.Connector
             // AppInfo
         }
 
-        public ConnectorRequest Build<T>(T request)
+        public override ConnectorRequest Build(AppRequest request, HttpMethod httpMethod)
         {
-            if (request is FetchDataRequest)            
-                BuildForFetch(request as FetchDataRequest);
-
-            return null;
+            return new ConnectorRequest(BuildUri(request, httpMethod), BuildHeaders(httpMethod), httpMethod);
         }
 
-        private ConnectorRequest BuildForFetch(FetchDataRequest request)
-        {
-            var httpMethod = HttpMethod.Get;
-            return new ConnectorRequest(BuildUri(httpMethod), BuildHeaders(httpMethod), httpMethod);
-        }
-
-        public override string BuildQuery(HttpMethod httpMethod)
+        public override string BuildQuery(AppRequest request, HttpMethod httpMethod)
         {
             // TODO: Implement
 

@@ -1,35 +1,24 @@
-﻿namespace Core
+namespace Core
 {
     public class HandlerBuilder
     {
         public void DoHandle(ProcessRequest processRequest, ProcessResponse processResponse)
         {
-            processResponse = new ProcessResponse();
-
-            OpenWeatherRequestHandler openWeatherRequestHandler = null;
-
             foreach (var request in processRequest.Requests)
             {
-                AppResponse response = null;
+                var handler = GetRequestHandlerByInstanecId(request);
 
-                if (TryGetOpenWeatherRequestHandler(request, ref openWeatherRequestHandler))
-                {
-                    response = openWeatherRequestHandler.DoHandle(request);
-                    continue;
-                }
-
-                processResponse.Responses.Add(response);
+                if (handler != null)
+                    processResponse.Responses.Add(handler.DoHandle(request));
             }
         }
 
-        private bool TryGetOpenWeatherRequestHandler(AppRequest request, ref OpenWeatherRequestHandler openWeatherRequestHandler)
+        private static IBaseRequestHandler GetRequestHandlerByInstanecId(AppRequest request)
         {
-            if (request.InstanceId.EqIgnoreCase(AppConstants.Connector.Instance.OPEN_WEATHER))
-            {
-                openWeatherRequestHandler = new OpenWeatherRequestHandler();
-            }
+            if (request.InstanceId.EqIgnoreCase(AppConstants.Connector.Instance.OPEN_WEATHER))            
+                return new OpenWeatherRequestHandler();            
 
-            return openWeatherRequestHandler != null;
+            return null;
         }           
     }
 }

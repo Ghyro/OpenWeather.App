@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 
 
-namespace Core
+namespace OpenWeather.Infrastructure.Connector
 {
     public class ConnectorRequest : BaseApiRequest
     {

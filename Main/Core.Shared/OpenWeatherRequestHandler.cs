@@ -1,32 +1,47 @@
-﻿namespace Core
+using System;
+using System.Collections.Generic;
+
+
+namespace Core
 {
     using OpenWeather.Connector;    
 
-    public class OpenWeatherRequestHandler
+    public class OpenWeatherRequestHandler : IBaseRequestHandler
     {
-        private readonly IServiceBase Service;
+        private readonly IServiceBase _service;
+        private readonly IDictionary<Type, Func<AppRequest, AppResponse>> _handlerMethods;
 
         public OpenWeatherRequestHandler()
         {
-            if (Service == null)
-                Service = new OpenWeatherRequestService();
+            if (_service == null)
+                _service = new OpenWeatherRequestService();
+            if (_handlerMethods == null)
+                _handlerMethods = InitHandlerMethods();
         }
 
-        public FetchDataResponse DoHandle(AppRequest request)
+        public AppResponse DoHandle(AppRequest request)
         {
-            FetchDataRequest fetchDataRequest = null;
-            FetchDataResponse fetchDataResponse = null;
+            if (!_handlerMethods.TryGetValue(request.GetType(), out var method))
+                throw new NotSupportedException();
 
-            if (TryGetFetchDataRequest(request, ref fetchDataRequest))  
-                fetchDataResponse = Service.Fetch(fetchDataRequest);            
+            return method.Invoke(request);
+        }
 
-            return fetchDataResponse;
-        }     
+        private AppResponse DoFetch(AppRequest request)
+        {            
+            var fetchReq = request as FetchDataRequest;
 
-        private bool TryGetFetchDataRequest(AppRequest request, ref FetchDataRequest fetchDataRequest)
+            var fetchResp = _service.Fetch(fetchReq);
+
+            return fetchResp;
+        }
+
+        private Dictionary<Type, Func<AppRequest, AppResponse>> InitHandlerMethods()
         {
-            fetchDataRequest = RequestHelper.GetRequest<FetchDataRequest>(request);
-            return fetchDataRequest != null;
+            return new Dictionary<Type, Func<AppRequest, AppResponse>>
+            {
+                { typeof(FetchDataRequest) , DoFetch }
+            };
         }
     }
 }

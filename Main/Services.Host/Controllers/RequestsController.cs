@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -10,19 +10,13 @@ namespace Services.Host.Controllers
     [ApiController]
     public class RequestsController : ControllerBase
     {
-        private readonly RequestsProcessor Processor;
+        private readonly RequestsProcessor _processor;
 
         public RequestsController()
         {
-            if (Processor == null)
-                Processor = new RequestsProcessor();
-        }
-
-        [HttpGet]
-        public ActionResult<string> Get()
-        {
-            return "Test Requests Controller";
-        }
+            if (_processor == null)
+                _processor = new RequestsProcessor();
+        } 
 
         [HttpPost]
         public async Task<ActionResult<ProcessResponse>> Process(ProcessRequest request)
@@ -30,9 +24,9 @@ namespace Services.Host.Controllers
             if (request == null)
                 return BadRequest();
 
-            ProcessResponse processResponse = null;
+            var processResponse = new ProcessResponse();
 
-            await Processor.ProcessAsync(request, processResponse);
+            await _processor.ProcessAsync(request, processResponse);
 
             return Ok(processResponse);
         }

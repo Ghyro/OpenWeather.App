@@ -1,4 +1,4 @@
-﻿using System;
+using System.Net.Http;
 
 
 namespace OpenWeather.Connector
@@ -7,21 +7,26 @@ namespace OpenWeather.Connector
 
     public class OpenWeatherRequestService : IServiceBase
     {
-        private readonly OpenWeatherRequestBuilder OpenWeatherRequestBuilder;
+        private readonly OpenWeatherRequestBuilder _openWeatherRequestBuilder;
+        private readonly ConnectorService _connectorService;
 
         public OpenWeatherRequestService()
         {
-            if (OpenWeatherRequestBuilder == null)
-                OpenWeatherRequestBuilder = new OpenWeatherRequestBuilder();
+            if (_openWeatherRequestBuilder == null)
+                _openWeatherRequestBuilder = new OpenWeatherRequestBuilder();
+
+            if (_connectorService == null)
+              _connectorService = new ConnectorService();
         }
 
-        public FetchDataResponse Fetch(FetchDataRequest request)
+        public AppResponse Fetch(AppRequest request)
         {
-            var connectorRequest = OpenWeatherRequestBuilder.Build<FetchDataRequest>(request);
+            var connectorRequest = _openWeatherRequestBuilder.Build(request, HttpMethod.Get);
 
-            //TODO: Implement
+            var connectorResponse = _connectorService.ExecuteAsync(connectorRequest).Result;
 
-            return new FetchDataResponse();
+            // TODO: Mock to return null
+            return null;
         }
     }
 }

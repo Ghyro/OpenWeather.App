@@ -1,6 +1,6 @@
-﻿namespace OpenWeather.API.DTO
+namespace OpenWeather.API.DTO
 {
-    public class OpenWeatherServiceResponse
+    public class OpenWeatherEntityModel
     {
         public string visibility { get; set; }
         public string dt { get; set; }
