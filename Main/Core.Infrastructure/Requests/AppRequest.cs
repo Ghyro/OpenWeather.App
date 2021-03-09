@@ -11,8 +11,5 @@ namespace Core
 
         [DataMember(Name = "InstanceId")]
         public string InstanceId { get; set; }
-
-        [DataMember(Name = "RequestType")]
-        public RequestType RequestType { get; set; }
     }
 }
