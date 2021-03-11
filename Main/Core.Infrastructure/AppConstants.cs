@@ -7,7 +7,6 @@ namespace Core
             public static class Instance
             {
                 public const string OPEN_WEATHER = "OPEN_WEATHER";
-                public const string STORE = "STORE";
             }
         }
     }

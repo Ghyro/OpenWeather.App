@@ -4,14 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{692FA768-3A80-405C-A314-02DB87D34ADC}</ProjectGuid>
+    <ProjectGuid>{F92B066E-078C-4680-BC20-45D20B3CF2E6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OpenWeather.Connector</RootNamespace>
-    <AssemblyName>OpenWeather.Connector</AssemblyName>
+    <RootNamespace>OpenWeather.StoreConnector</RootNamespace>
+    <AssemblyName>OpenWeather.StoreConnector</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,12 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="OpenWeather.API.DTO">
-      <HintPath>..\Utilities\OpenWeather.API.DTO\OpenWeather.API.DTO\bin\Release\OpenWeather.API.DTO.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,26 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connector\BaseConnectorRequestFactory.cs" />
-    <Compile Include="Connector\JsonParser.cs" />
-    <Compile Include="Connector\ConnectorService.cs" />
-    <Compile Include="Service\OpenWeatherRequestBuilder.cs" />
-    <Compile Include="Service\OpenWeatherRequestConnectorService.cs" />
+    <Compile Include="Connector\OpenWeatherRequestStoreConnectorService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Core.Infrastructure\Core.Infrastructure.csproj">
-      <Project>{c37d8d2a-529b-4a11-a485-37de9dac6c7c}</Project>
+      <Project>{C37D8D2A-529B-4A11-A485-37DE9DAC6C7C}</Project>
       <Name>Core.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OpenWeather.Infrastructure\OpenWeather.Infrastructure.csproj">
-      <Project>{25C68A8B-9B55-4D4C-B46B-4B6B2C168AD1}</Project>
-      <Name>OpenWeather.Infrastructure</Name>
-    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

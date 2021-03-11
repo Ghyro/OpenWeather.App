@@ -1,47 +1,34 @@
-using System;
-using System.Collections.Generic;
-
-
 namespace Core
 {
     using OpenWeather;
 
     public class OpenWeatherRequestHandler : IBaseRequestHandler
-    {
-        private readonly IServiceBase _service;
-        private readonly IDictionary<Type, Func<AppRequest, AppResponse>> _handlerMethods;
-
-        public OpenWeatherRequestHandler()
-        {
-            if (_service == null)
-                _service = new OpenWeatherRequestService();
-            if (_handlerMethods == null)
-                _handlerMethods = InitHandlerMethods();
-        }
-
+    {                
         public AppResponse DoHandle(AppRequest request)
         {
-            if (!_handlerMethods.TryGetValue(request.GetType(), out var method))
-                throw new NotSupportedException();
+            var response = new AppResponse();
+            var service = TryGetOpenWeatherServiceType(request);
 
-            return method.Invoke(request);
+            if (service != null)
+            {                
+                service.Handle(request, response);
+                return response;
+            }
+
+            return response;
         }
 
-        private AppResponse DoFetch(AppRequest request)
-        {            
-            var fetchReq = request as FetchDataRequest;
-
-            var fetchResp = _service.Fetch(fetchReq);
-
-            return fetchResp;
-        }
-
-        private Dictionary<Type, Func<AppRequest, AppResponse>> InitHandlerMethods()
+        private static IServiceBase TryGetOpenWeatherServiceType(AppRequest request)
         {
-            return new Dictionary<Type, Func<AppRequest, AppResponse>>
+            switch (request.ActionType)
             {
-                { typeof(FetchDataRequest) , DoFetch }
-            };
+                case ActionType.API:
+                  return new OpenWeatherRequestConnectorService();
+                case ActionType.Store:
+                  return new OpenWeatherRequestStoreConnectorService();
+                default:
+                  return null;
+            }
         }
     }
 }

@@ -1,15 +1,13 @@
-using System.Runtime.Serialization;
-
-
 namespace Core
 {
-    [DataContract(Name="AppReq")]
-    public abstract class AppRequest : IHasId
+    public class AppRequest : IHasId
     {
-        [DataMember(Name = "Id")]
         public string Id { get; set; }
-
-        [DataMember(Name = "InstanceId")]
+    
         public string InstanceId { get; set; }
+    
+        public ActionType ActionType { get; set; }
+    
+        public RequestType RequestType { get; set; }
     }
 }

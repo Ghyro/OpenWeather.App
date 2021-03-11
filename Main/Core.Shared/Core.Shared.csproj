@@ -55,6 +55,10 @@
       <Project>{692fa768-3a80-405c-a314-02db87d34adc}</Project>
       <Name>OpenWeather.Connector</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OpenWeather.StoreConnector\OpenWeather.StoreConnector.csproj">
+      <Project>{f92b066e-078c-4680-bc20-45d20b3cf2e6}</Project>
+      <Name>OpenWeather.StoreConnector</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
